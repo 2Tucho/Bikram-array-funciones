@@ -41,17 +41,19 @@
     return dameNumero
 };
 
-/*12*//*function pintarArray(arrayQueSea) {
-    return `${arrayQueSea}`};*/
+/*12*/
 
-/*13*/
+/*13*/function pintarArray(arrayQueSea) {
+    let textillo = JSON.stringify(arrayQueSea);
+    return textillo;
+};
 
-/*14*//*function eliminarDuplicados(cosota) {
+/*14*/function eliminarDuplicados(cosota) {
     let resultao = cosota.filter((item, index) => {
         return cosota.indexOf(item) === index;
     });
-    console.log(resultao);
-};*/
+    return resultao;
+};
 
 //Arrays (15-18)
 /*15*/let arrayNumerosNeg = [0,-1,-2,-3,-4,-5,-6,-7,-8,-9];
