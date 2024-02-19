@@ -15,9 +15,11 @@
 /*7*/function separarPalabras(frase) {
     return frase.split(' ');
 }
+
 /*8*/function repetirString(string, numero) {
     return string.repeat(numero);
 }
+
 /*9*/function esPrimo(numero) {
     for (let i = 2; i < numero; i++) {
         if (numero % i === 0) {
@@ -29,7 +31,7 @@
 
 //Mezclando arrays y funciones (10-14)
 /*10*/function ordenarArray(arrayNumeros) {
-    return arrayNumeros.sort((a, b) => a - b);
+    return arrayNumeros.sort((a, b) => a - b); //De menor a mayor no necesita los a y b
 }
 /*11*/function obtenerPares (numerosPares) {
     let dameNumero = [];
@@ -41,19 +43,42 @@
     return dameNumero
 };
 
-/*12*/
-
-/*13*/function pintarArray(arrayQueSea) {
-    let textillo = JSON.stringify(arrayQueSea);
-    return textillo;
+/*12*/function pintarArray(arrayQueSea) {
+    return (`'[${arrayQueSea}]'`);
 };
 
-/*14*/function eliminarDuplicados(cosota) {
+/*13*/
+
+/*14*/const eliminarDuplicados = (arr) => {
+  let swapped;
+
+  do {
+    swapped = false;
+    for (let i = 0; i < arr.length - 1; i++) {
+      if (arr[i] > arr[i + 1]) {
+        let temp = arr[i];
+        arr[i] = arr[i + 1];
+        arr[i + 1] = temp;
+        swapped = true;
+      }
+    }
+  } while (swapped);
+
+  let arrayListo = [];
+for (let i = 0; i < arr.length; i++) {
+  if (arr[i] != arr[i+1]) {
+    arrayListo.push(arr[i])
+    }
+};  
+  return arrayListo;
+};
+
+/*function eliminarDuplicados(cosota) {
     let resultao = cosota.filter((item, index) => {
         return cosota.indexOf(item) === index;
     });
     return resultao;
-};
+};*/
 
 //Arrays (15-18)
 /*15*/let arrayNumerosNeg = [0,-1,-2,-3,-4,-5,-6,-7,-8,-9];
